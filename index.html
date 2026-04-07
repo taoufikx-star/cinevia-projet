@@ -2,67 +2,33 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cinévia</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Header / Navbar -->
   <header>
     <h1>Cinévia</h1>
-    <nav>
-      <a href="#">Accueil</a>
-      <a href="#">Films</a>
-      <a href="#">Favoris</a>
-    </nav>
+    <input type="text" placeholder="Rechercher..." oninput="rechercher(this.value)">
   </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2>Bienvenue sur Cinévia</h2>
-    <p>Découvrez et sauvegardez vos films préférés.</p>
-    <button>Voir les films</button>
-  </section>
-
-  <!-- Section Films -->
-  <section class="films">
-    <h2>Films</h2>
-    <div class="grid">
-      <div class="film">
-        <img src="https://via.placeholder.com/200x300" alt="Film 1">
-        <h3>Titre du film</h3>
-        <button>Voir détails</button>
-        <button>Favoris</button>
-      </div>
-      <div class="film">
-        <img src="https://via.placeholder.com/200x300" alt="Film 2">
-        <h3>Titre du film</h3>
-        <button>Voir détails</button>
-        <button>Favoris</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Favoris -->
-  <section class="favoris">
-    <h2>Favoris</h2>
-    <p>Aucun film ajouté.</p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Cinévia</p>
-  </footer>
-
-  <!-- Modale Détails Film -->
-  <div class="modal">
+  <div class="filters">
+    <button onclick="afficherFilms(films)">Tous</button>
+    <button onclick="filtrer('Action')">Action</button>
+    <button onclick="filtrer('Comédie')">Comédie</button>
+    <button onclick="filtrer('Drame')">Drame</button>
+  </div>
+  <h2>Favoris</h2>
+  <div id="favoris-container" class="grid"></div>
+  <div id="modal" class="modal">
     <div class="modal-content">
-      <span class="close">X</span>
-      <h3>Titre du film</h3>
-      <p>Description du film...</p>
+      <h2 id="modal-title"></h2>
+      <img id="modal-img" />
+      <p id="modal-desc"></p>
+      <button id="fav-btn"></button>
+      <button onclick="fermerModal()">Fermer</button>
     </div>
   </div>
-
+  <script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎬 Cinevia</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">🎬 Cinevia</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Accueil</a></li>
+      <li><a href="#movies">Films</a></li>
+      <li><a href="#favorites">Favoris</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Découvrez les<br/><span>meilleurs films</span></h1>
+      <p>Explorez, recherchez et ajoutez vos films préférés à votre liste.</p>
+      <a href="#movies" class="btn">Explorer maintenant</a>
+    </div>
+  </section>
+
+  <!-- FILMS -->
+  <section class="section" id="movies">
+    <h2 class="section-title">Films Populaires</h2>
+
+    <!-- Filtres -->
+    <div class="filters">
+      <button class="filter-btn active" data-genre="all">Tous</button>
+      <button class="filter-btn" data-genre="Action">Action</button>
+      <button class="filter-btn" data-genre="Comédie">Comédie</button>
+      <button class="filter-btn" data-genre="Drame">Drame</button>
+    </div>
+
+    <!-- Grille de films -->
+    <div class="movies-grid" id="moviesGrid"></div>
+  </section>
+
+  <!-- FAVORIS -->
+  <section class="section" id="favorites">
+    <h2 class="section-title">❤️ Mes Favoris</h2>
+    <div class="movies-grid" id="favoritesGrid">
+      <p class="empty-msg" id="emptyMsg">Aucun favori pour l'instant.</p>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <img id="modalImg" src="" alt=""/>
+      <div class="modal-info">
+        <h2 id="modalTitle"></h2>
+        <span class="badge" id="modalGenre"></span>
+        <p id="modalDesc"></p>
+        <button class="btn" id="modalFavBtn">🖤 Ajouter aux favoris</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Cinevia — Tous droits réservés</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

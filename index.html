@@ -1,53 +1,67 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinévia - Simplon</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Cinevia</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">CINÉVIA</div>
-        <div class="menu">
-            <button onclick="showPage('home')">Accueil</button>
-            <button onclick="showPage('favs')">Favoris</button>
-        </div>
-        <input type="text" id="search" placeholder="Chercher un film..." oninput="searchMovie()">
-    </nav>
+  <nav class="navbar">
+    <div class="logo"> Cinevia</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Accueil</a></li>
+      <li><a href="#movies">Films</a></li>
+      <li><a href="#favorites">Favoris</a></li>
+    </ul>
+  </nav>
 
-    <main>
-        <div id="home-page">
-            <div class="filters">
-                <button onclick="filterCat('Tous')">Tous</button>
-                <button onclick="filterCat('Action')">Action</button>
-                <button onclick="filterCat('Drame')">Drame</button>
-                <button onclick="filterCat('Animation')">Animation</button>
-            </div>
-            <div id="grid" class="movie-grid"></div>
-        </div>
-
-        <div id="fav-page" class="hidden">
-            <h2 style="text-align:center; margin-top:20px;">Mes Favoris</h2>
-            <div id="fav-grid" class="movie-grid"></div>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Cinévia - Projet Simplon</p>
-    </footer>
-
-    <div id="modal" class="modal">
-        <div class="modal-box">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="m-img" src="" alt="" referrerpolicy="no-referrer">
-            <h2 id="m-title"></h2>
-            <p id="m-desc"></p>
-            <button id="m-btn" onclick="toggleFav()">Ajouter aux favoris</button>
-        </div>
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Découvrez les<br/><span>meilleurs films</span></h1>
+      <p>Explorez, recherchez et ajoutez vos films préférés à votre liste.</p>
+      <a href="#movies" class="btn">Explorer maintenant</a>
     </div>
+  </section>
 
-    <script src="script.js"></script>
+  <section class="section" id="movies">
+    <h2 class="section-title">Films Populaires</h2>
+
+    <div class="filters">
+      <button class="filter-btn active" data-genre="all">Tous</button>
+      <button class="filter-btn" data-genre="Action">Action</button>
+      <button class="filter-btn" data-genre="Comédie">Comédie</button>
+      <button class="filter-btn" data-genre="Drame">Drame</button>
+    </div>
+    <div class="movies-grid" id="moviesGrid"></div>
+  </section>
+
+  <section class="section" id="favorites">
+    <h2 class="section-title">Mes Favoris</h2>
+    <div class="movies-grid" id="favoritesGrid">
+      <p class="empty-msg" id="emptyMsg">Aucun favori pour l'instant.</p>
+    </div>
+  </section>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <img id="modalImg" src="" alt=""/>
+      <div class="modal-info">
+        <h2 id="modalTitle"></h2>
+        <span class="badge" id="modalGenre"></span>
+        <p id="modalDesc"></p>
+        <button class="btn" id="modalFavBtn"> Ajouter aux favoris</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Cinevia — Tous droits réservés</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -3,51 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinévia - Films Dynamiques</title>
+    <title>Cinévia - Simplon</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="navbar">
+    <nav class="navbar">
         <div class="logo">CINÉVIA</div>
-        <input type="text" id="searchInput" class="search-bar" placeholder="Rechercher un film...">
-        <div class="nav-links">
-            <button onclick="showPage('home')" class="filter-btn active">Accueil</button>
-            <button onclick="showPage('favorites')" class="filter-btn">Favoris</button>
+        <div class="menu">
+            <button onclick="showPage('home')">Accueil</button>
+            <button onclick="showPage('favs')">Favoris</button>
         </div>
-    </header>
+        <input type="text" id="search" placeholder="Chercher un film..." oninput="searchMovie()">
+    </nav>
 
-    <div id="home-page">
-        <div class="filters">
-            <button class="filter-btn active" onclick="filterByCategory('All', this)">Tous</button>
-            <button class="filter-btn" onclick="filterByCategory('Action', this)">Action</button>
-            <button class="filter-btn" onclick="filterByCategory('Comédie', this)">Comédie</button>
-            <button class="filter-btn" onclick="filterByCategory('Drame', this)">Drame</button>
-        </div>
-
-        <div id="movieGrid" class="movie-grid">
-            <!-- Injecté par JS -->
-        </div>
-    </div>
-
-    <div id="favorites-page" class="hidden">
-        <h2 style="padding: 50px 50px 0;">Mes Favoris</h2>
-        <div id="favoritesGrid" class="movie-grid">
-            <!-- Injecté par JS -->
-        </div>
-    </div>
-
-    <!-- Modal Détails -->
-    <div id="movieModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <img id="modalImg" class="modal-img" src="" alt="">
-            <div class="modal-details">
-                <h2 id="modalTitle" style="font-size: 40px; margin-bottom: 10px;"></h2>
-                <p id="modalCategory" style="color: #e50914; font-weight: 700; margin-bottom: 20px;"></p>
-                <p id="modalDesc" style="color: #aaa; line-height: 1.6;"></p>
-                <button id="favBtn" class="fav-btn">Ajouter aux favoris</button>
+    <main>
+        <div id="home-page">
+            <div class="filters">
+                <button onclick="filterCat('Tous')">Tous</button>
+                <button onclick="filterCat('Action')">Action</button>
+                <button onclick="filterCat('Drame')">Drame</button>
+                <button onclick="filterCat('Animation')">Animation</button>
             </div>
+            <div id="grid" class="movie-grid"></div>
+        </div>
+
+        <div id="fav-page" class="hidden">
+            <h2 style="text-align:center; margin-top:20px;">Mes Favoris</h2>
+            <div id="fav-grid" class="movie-grid"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Cinévia - Projet Simplon</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-box">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="m-img" src="" alt="" referrerpolicy="no-referrer">
+            <h2 id="m-title"></h2>
+            <p id="m-desc"></p>
+            <button id="m-btn" onclick="toggleFav()">Ajouter aux favoris</button>
         </div>
     </div>
 

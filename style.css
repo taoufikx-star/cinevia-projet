@@ -1,146 +1,161 @@
-/* style.css - Cinévia Pro */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
-
-:root {
-    --primary: #e50914;
-    --dark: #0a0a0a;
-    --card-bg: #1a1a1a;
-    --white: #ffffff;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--dark);
-    color: var(--white);
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+body {
+    font-family: sans-serif;
+    background-color: #111;
+    color: white;
+}
+
 .navbar {
-    padding: 20px 50px;
-    background: rgba(0,0,0,0.8);
+    background-color: #000;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 10;
 }
 
-.logo { font-size: 24px; font-weight: 800; color: var(--primary); }
+.logo {
+    color: red;
+    font-weight: bold;
+    font-size: 22px;
+}
 
-.search-bar {
-    background: #333;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
+.menu button {
+    background: none;
     color: white;
-    width: 300px;
+    border: none;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#search {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
 }
 
 .filters {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 30px;
+    text-align: center;
+    padding: 20px;
 }
 
-.filter-btn {
-    background: #222;
-    color: white;
-    border: 1px solid #444;
-    padding: 8px 20px;
-    border-radius: 20px;
+.filters button {
+    padding: 8px 15px;
+    margin: 5px;
     cursor: pointer;
-    transition: 0.3s;
+    border-radius: 5px;
+    border: 1px solid white;
+    background: none;
+    color: white;
 }
 
-.filter-btn.active, .filter-btn:hover {
-    background: var(--primary);
-    border-color: var(--primary);
+.filters button:hover {
+    background-color: red;
 }
 
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 0 50px 50px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
 }
 
-.movie-card {
-    background: var(--card-bg);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s;
-    border: 1px solid #333;
+.card {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
 }
 
-.movie-card:hover { transform: scale(1.05); border-color: var(--primary); }
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
 
-.movie-card img { width: 100%; height: 350px; object-fit: cover; }
-
-.movie-info { padding: 20px; }
-
-.movie-info h3 { margin: 0 0 10px; font-size: 18px; }
-
-.btn-details {
-    background: var(--primary);
+.card button {
+    background-color: red;
     color: white;
     border: none;
     padding: 10px;
     width: 100%;
-    border-radius: 8px;
-    font-weight: 600;
+    margin-top: 10px;
     cursor: pointer;
 }
 
-/* Modal */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
 .modal {
     display: none;
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-    z-index: 1000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
     justify-content: center;
     align-items: center;
 }
 
-.modal-content {
-    background: var(--card-bg);
-    width: 800px;
-    max-width: 90%;
-    border-radius: 20px;
-    display: flex;
-    overflow: hidden;
+.modal-box {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
     position: relative;
 }
 
-.close-modal {
+.modal-box img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.close {
     position: absolute;
-    top: 20px; right: 20px;
-    font-size: 30px;
+    top: 10px; right: 15px;
+    font-size: 25px;
     cursor: pointer;
-    color: white;
-    z-index: 10;
 }
 
-.modal-img { width: 40%; object-fit: cover; }
-.modal-details { padding: 40px; width: 60%; }
-
-.fav-btn {
-    background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: 700;
+#m-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 15px;
     cursor: pointer;
-    margin-top: 20px;
 }
 
-.fav-btn.is-fav {
-    background: var(--primary);
-    color: white;
+.hidden {
+    display: none;
 }
 
-.hidden { display: none; }
+@media (max-width: 900px) {
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .movie-grid {
+        grid-template-columns: 1fr;
+    }
+}

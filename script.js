@@ -35,7 +35,7 @@ const filmsData = [
         categorie: "Action",
         description: "Dans un monde post-apocalyptique, Max s'associe à Furiosa pour échapper à un tyran.",
         note: "8.1/10",
-        image: "https://m.media-amazon.com/images/M/MV5BN2EwM2I5OWMtMGNlNi00NWUzLWI5YjUtZTcyNjcyYzZhYTM5XkFtZTgwNjAzMjE3NjE@._V1_.jpg",
+        image : "Mad Max.webp"
     },
     {
         id: 5,
@@ -43,7 +43,7 @@ const filmsData = [
         categorie: "Action",
         description: "Un général romain déchu cherche vengeance contre l'empereur corrompu qui a assassiné sa famille.",
         note: "8.5/10",
-        image: "https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzYxOWFhIS01XkFtZTcwNjE5MDA5MQ@@._V1_.jpg",
+        image: "M4.webp"
     },
     {
         id: 6,
@@ -59,7 +59,7 @@ const filmsData = [
         categorie: "Drame",
         description: "Arthur Fleck, un homme méprisé par la société, bascule dans la folie et devient le Joker.",
         note: "8.4/10",
-        image: "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtYzY0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkFtZTgwNzg2OTY0NTM@._V1_.jpg",
+        image: "jk.webp"
     },
     {
         id: 9,
@@ -67,7 +67,7 @@ const filmsData = [
         categorie: "Action",
         description: "Peter Parker doit faire face aux conséquences de son identité révélée au monde entier.",
         note: "8.2/10",
-        image: "https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkFtZTgwNzMyMDIyMW@._V1_.jpg",
+        image: "spider.jpg"
     },
     {
         id: 10,
@@ -83,7 +83,7 @@ const filmsData = [
         categorie: "Comédie",
         description: "Trois amis se réveillent d'un enterrement de vie de garçon à Las Vegas sans aucun souvenir de la nuit précédente et le futur marié a disparu.",
         note: "7.7/10",
-        image: "https://m.media-amazon.com/images/M/MV5BMTU1MDA1MTYwMF5BMl5BanBnXkFtZTcwMDcxMDUxMg@@._V1_.jpg",
+        image: "m5c.jpg"
     },
     {
         id: 12,
@@ -91,7 +91,7 @@ const filmsData = [
         categorie: "Comédie",
         description: "Deux lycéens co-dépendants sont forcés de faire face à l'angoisse de la séparation après avoir planifié une fête mémorable.",
         note: "7.6/10",
-        image: "https://m.media-amazon.com/images/M/MV5BMTc0NjIyOTU0MV5BMl5BanBnXkFtZTcwMzIxNDE1MQ@@._V1_.jpg",
+        image: "cs.jpg"
     }
 ];
 

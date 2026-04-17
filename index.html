@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinévia - Votre guide cinéma</title>
+    <title>Cinévia - Votre Cinéma Interactif</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome pour les icônes de cœur -->
+    <!-- Font Awesome pour les icônes (Etoiles, Recherche) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -13,46 +13,59 @@
     <!-- Barre de Navigation -->
     <header>
         <nav class="navbar">
-            <div class="nav-container">
-                <h1 class="logo" onclick="navigateTo('home')">Cinévia</h1>
-                <ul class="nav-links">
-                    <li><a href="#" id="link-home" class="active" onclick="navigateTo('home')">Accueil</a></li>
-                    <li><a href="#" id="link-favorites" onclick="navigateTo('favorites')">Favoris</a></li>
-                </ul>
-                <div class="search-container">
-                    <input type="text" id="search-input" placeholder="Rechercher un film...">
-                    <i class="fas fa-search"></i>
-                </div>
+            <div class="logo" onclick="afficherPage('accueil')">
+                <i class="fas fa-video"></i> Cinévia
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="afficherPage('accueil')">Accueil</a></li>
+                <li><a href="#movie-grid">Films</a></li>
+                <li><a href="#" onclick="afficherPage('favoris')">Favoris</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Rechercher..." oninput="rechercherFilm()">
             </div>
         </nav>
     </header>
 
-    <main>
-        <!-- Filtres par catégorie (uniquement sur Accueil) -->
-        <div id="category-filters" class="filters-container">
-            <!-- Injecté par JS -->
+    <!-- Section Filtres -->
+    <div id="hero-section">
+        <div class="hero">
+            <h1>Découvrez les meilleurs films 🎥</h1>
+            <p>Explorez, recherchez et ajoutez vos films préférés</p>
+            <a href="#movie-grid" class="btn-explorer">Explorer maintenant</a>
+        </div>
+    </div>
+
+    <div id="filter-container" class="filters">
+        <button class="filter-btn active" onclick="filtrerParCategorie('Tous', this)">Tous</button>
+        <button class="filter-btn" onclick="filtrerParCategorie('Action', this)">Action</button>
+        <button class="filter-btn" onclick="filtrerParCategorie('Comédie', this)">Comédie</button>
+        <button class="filter-btn" onclick="filtrerParCategorie('Drame', this)">Drame</button>
+    </div>
+
+    <main class="container">
+        <h2 id="page-title" class="section-title">Films populaires</h2>
+        <!-- Grille de films dynamique -->
+        <div id="movie-grid" class="movie-grid">
+            <!-- Injecté par JavaScript -->
         </div>
 
-        <h2 id="page-title">Tous les films</h2>
-
-        <!-- Grille de films -->
-        <div id="movies-grid" class="movies-grid">
-            <!-- Injecté par JS -->
-        </div>
+        <h2 id="favoris-title" class="section-title" style="display: none;">Mes Favoris ❤️</h2>
     </main>
 
-    <!-- Modale de détails -->
-    <div id="movie-modal" class="modal">
+    <!-- Modale de Détails -->
+    <div id="movieModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div id="modal-body" class="modal-body">
-                <!-- Injecté par JS -->
+            <span class="close-btn" onclick="fermerModale()">&times;</span>
+            <div id="modal-details" class="modal-body">
+                <!-- Détails injectés par JavaScript -->
             </div>
         </div>
     </div>
 
+    <!-- Pied de page -->
     <footer>
-        <p>&copy; 2024 Cinévia - Tous droits réservés.</p>
+        <p>&copy; 2024 Cinevia - Tous droits réservés</p>
     </footer>
 
     <script src="script.js"></script>

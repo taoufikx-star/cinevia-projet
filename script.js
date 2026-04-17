@@ -19,7 +19,7 @@ const filmsData = [
         categorie: "Action",
         description: "Batman affronte le Joker, un criminel maléfique qui sème le chaos à Gotham City.",
         note: "9.0/10",
-        image: "https://m.media-amazon.com/images/I/91KensSBe9L._AC_SL1500_.jpg",
+        image: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
     },
     {
         id: 3,

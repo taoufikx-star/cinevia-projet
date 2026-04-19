@@ -6,14 +6,6 @@
 // 1. DONNÉES SIMULÉES (La source de vérité)
 const filmsData = [
     {
-        id: 1,
-        titre: "Inception",
-        categorie: "Action",
-        description: "Un voleur qui s'approprie les secrets d'autrui à travers leurs rêves doit réaliser l'impossible : l'inception.",
-        note: "8.8/10",
-        image: "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
-    },
-    {
         id: 2,
         titre: "The Dark Knight",
         categorie: "Action",
@@ -70,30 +62,14 @@ const filmsData = [
         image: "spider.jpg"
     },
     {
-        id: 10,
-        titre: "Black Panther",
-        categorie: "Action",
-        description: "T'Challa retourne chez lui dans la nation africaine isolée et technologiquement avancée du Wakanda pour servir en tant que roi.",
-        note: "7.3/10",
-        image: "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_.jpg",
-    },
-    {
         id: 11,
         titre: "The Hangover",
         categorie: "Comédie",
         description: "Trois amis se réveillent d'un enterrement de vie de garçon à Las Vegas sans aucun souvenir de la nuit précédente et le futur marié a disparu.",
         note: "7.7/10",
         image: "m5c.jpg"
-    },
-    {
-        id: 12,
-        titre: "Superbad",
-        categorie: "Comédie",
-        description: "Deux lycéens co-dépendants sont forcés de faire face à l'angoisse de la séparation après avoir planifié une fête mémorable.",
-        note: "7.6/10",
-        image: "cs.jpg"
     }
-];
+]
 
 // 2. ÉTAT DE L'APPLICATION
 let favoris = JSON.parse(localStorage.getItem('cinevia_favoris')) || [];

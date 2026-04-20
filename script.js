@@ -224,7 +224,7 @@ window.onclick = function(event) {
     const modal = document.getElementById('movieModal');
     if (event.target == modal) {
         fermerModale();
-    }
+    }o
 }
 
 // LANCEMENT INITIAL

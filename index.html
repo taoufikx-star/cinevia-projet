@@ -1,40 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Cinévia</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Ma ToDo List</title>
+    <link rel="stylesheet" href="todo.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <h1 class="logo" onclick="nav('home')">Cinévia</h1>
-        <input type="text" id="searchInput" placeholder="Chercher film..." oninput="render()">
-        <div class="nav-links">
-            <button onclick="nav('home')" id="btn-accueil" class="active">Accueil</button>
-            <button onclick="nav('fav')" id="btn-favoris">Favoris</button>
-        </div>
-    </nav>
-    <div class="container">
-        <div id="filter-bar" class="filters">
-          <button class="f-btn active" onclick="filtrer('Tous', this)">Tous</button>
-            <button class="f-btn" onclick="filtrer('Action', this)">Action</button>
-            <button class="f-btn" onclick="filtrer('Comédie', this)">Comédie</button>
-            <button class="f-btn" onclick="filtrer('Drame', this)">Drame</button>
+    <div class="app">
+        <h1>📝 Mes Tâches</h1>
+        
+        <div class="ajout">
+            <input type="text" id="saisie" placeholder="Nouvelle tâche...">
+            <button onclick="ajouter()">Ajouter</button>
         </div>
 
-        <h2 id="view-title">Les Films</h2>
-        <div id="grid" class="grid"></div>
-    </div>
-    <div id="modal" class="modal" onclick="if(event.target==this)this.style.display='none'">
-        <div class="modal-content">
-            <button class="close-btn" onclick="document.getElementById('modal').style.display='none'">&times;</button>
-            <div id="m-body"></div>
-        </div>
+        <ul id="liste">
+            <!-- Les tâches apparaissent ici -->
+        </ul>
+
+        <p class="info">Clique sur une tâche pour la barrer ❌ pour la supprimer</p>
     </div>
 
-    <script src="script.js"></script>
+    <script src="todo.js"></script>
 </body>
 </html>
